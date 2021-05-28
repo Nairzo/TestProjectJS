@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {app_routing} from '../app/app.routes';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductosComponent } from './components/pages/productos/productos.component';
 import { ProveedoresComponent } from './components/pages/proveedores/proveedores.component';
 import { InventarioComponent } from './components/pages/inventario/inventario.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { InventarioComponent } from './components/pages/inventario/inventario.co
     InventarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    app_routing
   ],
   providers: [],
   bootstrap: [AppComponent]
