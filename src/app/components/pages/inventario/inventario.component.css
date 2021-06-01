@@ -1,0 +1,55 @@
+.styled-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+.styled-table thead tr {
+    background-color: #2abdfc;
+    color: #ffffff;
+    text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+.styled-table tbody tr {
+    border-bottom: thin solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #2abdfc;
+}
+.boton-añadir {
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+    background-color: #fff;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.boton-añadir:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.3);
+}
+.flex {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 80px;
+    margin-bottom: 50px;
+}
