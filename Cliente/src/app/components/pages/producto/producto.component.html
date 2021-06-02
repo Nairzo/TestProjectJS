@@ -1,1 +1,45 @@
-<p>producto works!</p>
+<div class="flex">
+  <a class="boton-regresar" [routerLink]="['productos']">←</a>
+</div>
+
+<div class="container cd">
+  <div class="row">
+    <div class="col">
+      <h2 class="head mb-5">Producto</h2>
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="container ">
+        <img src="../../../../assets/images/logo.png" alt="producto" class="ig">
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col mb-5">
+          Descripcion
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-primary">Precio compra</div>
+        <div class="col">precio</div>
+      </div>
+      <div class="row">
+        <div class="col text-primary">Precio venta</div>
+        <div class="col">precio</div>
+      </div>
+      <div class="row">
+        <div class="col text-primary">Proveedor</div>
+        <div class="col">proveedor</div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <button type="button" class="btn btn-danger">Eliminar</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">Editar</button>
+    </div>
+  </div>
+</div>
