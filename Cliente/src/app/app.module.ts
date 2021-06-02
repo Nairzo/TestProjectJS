@@ -15,6 +15,11 @@ import { ProveedorComponent } from './components/pages/proveedor/proveedor.compo
 import { ProductoeditComponent } from './components/pages/productoedit/productoedit.component';
 import { ProductoaddComponent } from './components/pages/productoadd/productoadd.component';
 
+
+//Servicios
+import { ProductDataService } from './services/product-data.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,9 @@ import { ProductoaddComponent } from './components/pages/productoadd/productoadd
     BrowserModule,
     app_routing
   ],
-  providers: [],
+  providers: [
+    ProductDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
