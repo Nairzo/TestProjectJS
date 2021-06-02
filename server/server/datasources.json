@@ -1,0 +1,12 @@
+{
+  
+  "db": {
+    "port": 27017,
+    "url": "mongodb+srv://adrian:741258963@dbcluster.ll1sk.mongodb.net/dbCluster?retryWrites=true&w=majority",
+    "database": "dbCluster",
+    "password": "741258963",
+    "name": "db",
+    "user": "adrian",
+    "connector": "mongodb"
+  }
+}
