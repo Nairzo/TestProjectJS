@@ -1,4 +1,4 @@
-.ef:hover {
+.card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
@@ -23,4 +23,16 @@
     display: flex;
     justify-content: space-between;
     margin-right: 80px;
+}
+.card {
+    border-radius: 1rem;
+    
+}
+.card-columns {
+    column-count: 6;
+}
+.card-body {
+    background-color: #E2E2E2;
+    border-radius: 0 0 1rem 1rem;
+    color: #000;
 }

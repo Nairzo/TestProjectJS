@@ -10,6 +10,7 @@ import { ProveedoresComponent } from './components/pages/proveedores/proveedores
 import { InventarioComponent } from './components/pages/inventario/inventario.component';
 import { from } from 'rxjs';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProductoComponent } from './components/pages/producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MenuComponent } from './components/menu/menu.component';
     ProductosComponent,
     ProveedoresComponent,
     InventarioComponent,
-    MenuComponent
+    MenuComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

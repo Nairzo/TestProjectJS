@@ -8,11 +8,29 @@
   <a class="boton-añadir" href="#">+</a>
 </div>
 
-<div class="card ef" style="width: 12rem; border-radius: 1rem; ">
-  <img src="../../../../assets/images/logo.png" class="card-img-top" alt="Imagen">
-  <div class="card-body"
-    style="border-radius: 0rem 0rem 1rem 1rem; background-color: #E2E2E2; ">
-    <p class="card-text ">Some quick example .</p>
-    <p class="card-text text-primary">Some quick example .</p>
+<!--<div class="card-columns">
+  <div class="card">
+    <img class="card-img-top img-fluid" src="../../../../assets/images/logo.png" alt="Card image cap">
+
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
   </div>
+</div> -->
+<div class="card-columns">
+  <a [routerLink]="['/producto']" style="text-decoration: none;">
+    <div class="card">
+      <img class="card-img-top img-fluid" src="../../../../assets/images/logo.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Producto</h5>
+        <p class="card-text">Descripcion</p>
+        <p class="card-text"><small class="text-primary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </a>
+
 </div>
