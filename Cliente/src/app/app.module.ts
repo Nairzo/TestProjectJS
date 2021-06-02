@@ -12,6 +12,8 @@ import { from } from 'rxjs';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductoComponent } from './components/pages/producto/producto.component';
 import { ProveedorComponent } from './components/pages/proveedor/proveedor.component';
+import { ProductoeditComponent } from './components/pages/productoedit/productoedit.component';
+import { ProductoaddComponent } from './components/pages/productoadd/productoadd.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProveedorComponent } from './components/pages/proveedor/proveedor.compo
     InventarioComponent,
     MenuComponent,
     ProductoComponent,
-    ProveedorComponent
+    ProveedorComponent,
+    ProductoeditComponent,
+    ProductoaddComponent
   ],
   imports: [
     BrowserModule,
