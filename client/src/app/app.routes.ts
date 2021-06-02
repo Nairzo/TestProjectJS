@@ -10,7 +10,7 @@ const app_routes: Routes = [
     { path: "proveedores", component: ProveedoresComponent},
     { path: "proveedor", component: ProveedorComponent},
     { path: "inventario", component: InventarioComponent},
-    { path: "producto", component: ProductoComponent},
+    { path: "producto/:id", component: ProductoComponent},
     {path: "**", pathMatch: "full", redirectTo: "productos"}
 ];
 
