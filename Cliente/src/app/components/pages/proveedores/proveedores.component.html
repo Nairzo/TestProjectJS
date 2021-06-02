@@ -1,0 +1,23 @@
+<div class="flex">
+  <div class="input-group" style="width: 300px; margin-bottom: 50px;">
+    <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">buscar</button>
+  </div>
+
+  <a class="boton-añadir" href="#">+</a>
+</div>
+
+<div class="card-columns">
+  <a [routerLink]="['/proveedor']" style="text-decoration: none;">
+    <div class="card">
+      <img class="card-img-top img-fluid" src="../../../../assets/images/logo.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Proveedor</h5>
+        <p class="card-text">Descripcion</p>
+        <p class="card-text"><small class="text-primary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </a>
+
+</div>
