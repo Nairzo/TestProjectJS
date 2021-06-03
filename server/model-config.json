@@ -38,5 +38,9 @@
   "producto": {
     "dataSource": "db",
     "public": true
+  },
+  "proveedor": {
+    "dataSource": "db",
+    "public": true
   }
 }
