@@ -3,5 +3,6 @@ export interface ProviderInterface {
     estado?: string;
     telefono?: number;
     rfc?: string;
+    imagen?: string;
     id?: string;
 }
