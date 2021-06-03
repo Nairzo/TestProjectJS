@@ -5,24 +5,26 @@
 <div class="container cd">
   <div class="row">
     <div class="col">
-      <h2 class="head mb-5">Producto</h2>
+      <h2 class="head mb-5">{{producto.nombre}}</h2>
     </div>
   </div>
   <div class="row align-items-center">
     <div class="col">
       <div class="container ">
-        <img src="../../../../assets/images/logo.png" alt="producto" class="ig">
+        <img src={{producto.imagen}} alt="producto" class="ig">
       </div>
     </div>
     <div class="col">
       <div class="row">
         <div class="col mb-5">
-          Descripcion
+          <div class="overflow-auto">
+            {{producto.descripcion}}
+          </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row align-items-left">
         <div class="col text-primary">Precio compra</div>
-        <div class="col">precio</div>
+        <div class="col">${{producto.precio}}.00</div>
       </div>
       <div class="row">
         <div class="col text-primary">Precio venta</div>
@@ -32,14 +34,20 @@
         <div class="col text-primary">Proveedor</div>
         <div class="col">proveedor</div>
       </div>
+      <div class="row">
+        <div class="col text-primary">Cantidad en inventario</div>
+        <div class="col">{{producto.cantidad}}</div>
+      </div>
     </div>
   </div>
-  <div class="row mt-5">
-    <div class="col">
-      <button type="button" class="btn btn-danger">Eliminar</button>
-    </div>
-    <div class="col">
-      <button type="button" class="btn btn-primary">Editar</button>
+  <div class="d-flex justify-content-around">
+    <div class="row mt-5">
+      <div class="col">
+        <a href="#/productos" class="btn btn-danger text-light" (click)="onDelete(producto.id)">Eliminar</a>
+      </div>
+      <div class="col">
+        <a [routerLink] = "['/productoedit', producto.id]" type="button" class="btn btn-primary text-light">Editar</a>
+      </div>
     </div>
   </div>
 </div>
