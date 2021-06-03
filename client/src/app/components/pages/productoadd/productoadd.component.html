@@ -1,1 +1,40 @@
-<p>productoadd works!</p>
+<div class="flex">
+    <a class="boton-regresar" [routerLink]="['productos']">←</a>
+</div>
+
+<div class="container cd">
+    <h2 class="head mb-3">Producto</h2>
+    <form class="form-book" #formProduct="ngForm">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"
+                [(ngModel)]="selectedProduct.nombre">
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen URL</label>
+            <input type="text" id="imagen" name="imagen" class="form-control" placeholder="URL"
+                [(ngModel)]="selectedProduct.imagen">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="precio">Precio</label>
+                <input type="text" id="precio" name="precio" class="form-control" placeholder="0"
+                    [(ngModel)]="selectedProduct.precio">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="cantidad">Cantidad</label>
+                <input type="text" id="cantidad" name="cantidad" class="form-control" placeholder="0"
+                    [(ngModel)]="selectedProduct.cantidad">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="4"
+                [(ngModel)]="selectedProduct.descripcion"></textarea>
+        </div>
+        <div class="align-items-rigth">
+            <button type="submit" class="btn btn-primary" (click)="edit ? onUpdateProduct(formProduct) : onSaveProduct(formProduct)">Guardar</button>
+        </div>
+    </form>
+
+</div>
