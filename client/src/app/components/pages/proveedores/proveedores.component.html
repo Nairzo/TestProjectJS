@@ -1,23 +1,28 @@
-<div class="flex">
-  <div class="input-group" style="width: 300px; margin-bottom: 50px;">
-    <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search"
-      aria-describedby="search-addon" />
-    <button type="button" class="btn btn-outline-primary">buscar</button>
+<div class="overflow-auto">
+  <div class="flex">
+    <div class="input-group" style="width: 300px; margin-bottom: 50px;">
+      <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search"
+        aria-describedby="search-addon" />
+      <button type="button" class="btn btn-outline-primary">buscar</button>
+    </div>
+
+    <a class="boton-añadir" routerLink='/productoadd'>+</a>
   </div>
 
-  <a class="boton-añadir" href="#">+</a>
-</div>
-
-<div class="card-columns">
-  <a [routerLink]="['/proveedor']" style="text-decoration: none;">
-    <div class="card">
-      <img class="card-img-top img-fluid" src="../../../../assets/images/logo.png" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Proveedor</h5>
-        <p class="card-text">Descripcion</p>
-        <p class="card-text"><small class="text-primary">Last updated 3 mins ago</small></p>
+  <div class="container mr-3">
+    <div class="row">
+      <div class="col-xs-12 col-sm-2 col-md-3">
+        <div class="card-columns">
+          <a routerLink='/producto' style="text-decoration: none;">
+            <div class="card">
+              <img class="card-img-top img-fluid" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">nombre</h5>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-  </a>
-
+  </div>
 </div>
