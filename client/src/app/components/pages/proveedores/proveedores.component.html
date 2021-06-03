@@ -8,16 +8,16 @@
 
     <a class="boton-añadir" routerLink='/productoadd'>+</a>
   </div>
-
+  
   <div class="container mr-3">
     <div class="row">
-      <div class="col-xs-12 col-sm-2 col-md-3">
+      <div class="col-xs-12 col-sm-2 col-md-3" *ngFor="let proveedor of proveedores">
         <div class="card-columns">
-          <a routerLink='/producto' style="text-decoration: none;">
+          <a routerLink='/producto/' style="text-decoration: none;">
             <div class="card">
-              <img class="card-img-top img-fluid" src="..." alt="Card image cap">
+              <img class="card-img-top " src={{proveedor.imagen}} alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">nombre</h5>
+                <h5 class="card-title">{{proveedor.nombre}}</h5>
               </div>
             </div>
           </a>
