@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProviderDataService } from 'src/app/services/provider-data.service';
+import { ProviderInterface } from '../../../models/proveedor.interface';
 
 @Component({
   selector: 'app-proveedores',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProveedoresComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi: ProviderDataService) { }
+  private proveedores!: ProviderInterface;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getListProviders()
+  }
+  getListProviders() {
+    this.dataApi.getAllProviders().subscribe((proveedores: ProviderInterface) => (this.proveedores = proveedores));
   }
 
 }
