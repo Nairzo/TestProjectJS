@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {app_routing} from '../app/app.routes';
@@ -12,7 +13,6 @@ import { from, Observable } from 'rxjs';
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductoComponent } from './components/pages/producto/producto.component';
 import { ProveedorComponent } from './components/pages/proveedor/proveedor.component';
-import { ProductoeditComponent } from './components/pages/productoedit/productoedit.component';
 import { ProductoaddComponent } from './components/pages/productoadd/productoadd.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,13 +31,13 @@ import { ProductDataService } from './services/product-data.service';
     MenuComponent,
     ProductoComponent,
     ProveedorComponent,
-    ProductoeditComponent,
     ProductoaddComponent
   ],
   imports: [
     BrowserModule,
     app_routing,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ProductDataService
