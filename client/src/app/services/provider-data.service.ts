@@ -19,21 +19,21 @@ export class ProviderDataService {
   });
 
   getAllProviders() {
-    return this.http.get(`${this.url_api}/productos`);
+    return this.http.get(`${this.url_api}/proveedores`);
   }
 
   getProviderById(id: string) {
-    return this.http.get(`${this.url_api}/productos/${id}`);
+    return this.http.get(`${this.url_api}/proveedores/${id}`);
   }
   createProvider(producto: ProviderInterface){
-    return this.http.post<ProviderInterface>(`${this.url_api}/productos/`, producto, {headers: this.headers}).pipe(map(data => data));
+    return this.http.post<ProviderInterface>(`${this.url_api}/proveedores/`, producto, {headers: this.headers}).pipe(map(data => data));
   }
   updateProvider(id: string|undefined, updatedGame: ProviderInterface): Observable<ProviderInterface>{
-    return this.http.put(`${this.url_api}/productos/`, updatedGame, {headers: this.headers}).pipe(map(data => data));
+    return this.http.put(`${this.url_api}/proveedores/`, updatedGame, {headers: this.headers}).pipe(map(data => data));
 
   }
   deleteProvider(id: string){
-    return this.http.delete<ProviderInterface>(`${this.url_api}/productos/${id}`, {headers: this.headers}).pipe(map(data => data));
+    return this.http.delete<ProviderInterface>(`${this.url_api}/proveedores/${id}`, {headers: this.headers}).pipe(map(data => data));
   }
 
 }
