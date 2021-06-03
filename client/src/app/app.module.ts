@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Servicios
 import { ProductDataService } from './services/product-data.service';
+import { ProviderDataService } from './services/provider-data.service';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ProductDataService } from './services/product-data.service';
     FormsModule
   ],
   providers: [
-    ProductDataService
+    ProductDataService,
+    ProviderDataService
   ],
   bootstrap: [AppComponent]
 })
