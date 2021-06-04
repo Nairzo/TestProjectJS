@@ -13,6 +13,15 @@ export class ProviderDataService {
   proveedores!: Observable<any>;
   url_api = "http://localhost:3000/api";
 
+  public selectedProvider: ProviderInterface = {
+    nombre: "",
+    estado: "",
+    telefono: 0,
+    rfc: "",
+    imagen: "",
+    id: ""
+  };
+
   constructor(private http: HttpClient) { }
   headers: HttpHeaders = new HttpHeaders({
     "Content-type": "application/json"
@@ -25,8 +34,8 @@ export class ProviderDataService {
   getProviderById(id: string) {
     return this.http.get(`${this.url_api}/proveedores/${id}`);
   }
-  createProvider(producto: ProviderInterface){
-    return this.http.post<ProviderInterface>(`${this.url_api}/proveedores/`, producto, {headers: this.headers}).pipe(map(data => data));
+  createProvider(proveedor: ProviderInterface){
+    return this.http.post<ProviderInterface>(`${this.url_api}/proveedores/`, proveedor, {headers: this.headers}).pipe(map(data => data));
   }
   updateProvider(id: string|undefined, updatedGame: ProviderInterface): Observable<ProviderInterface>{
     return this.http.put(`${this.url_api}/proveedores/`, updatedGame, {headers: this.headers}).pipe(map(data => data));
