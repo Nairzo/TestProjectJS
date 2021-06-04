@@ -1,1 +1,43 @@
-<p>proveedor works!</p>
+<div class="flex">
+    <a class="boton-regresar" [routerLink]="['/proveedores']">←</a>
+</div>
+
+<div class="container cd">
+    <div class="row">
+        <div class="col">
+            <h2 class="head mb-5">{{proveedor.nombre}}</h2>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="container ">
+                <img src={{proveedor.imagen}} alt="Logo" class="ig">
+            </div>
+        </div>
+        <div class="col">
+            <div class="row align-items-left">
+                <div class="col text-primary">Estado</div>
+                <div class="col">{{proveedor.estado}}</div>
+            </div>
+            <div class="row">
+                <div class="col text-primary">Telefono</div>
+                <div class="col">{{proveedor.telefono}}</div>
+            </div>
+            <div class="row">
+                <div class="col text-primary">RFC</div>
+                <div class="col">{{proveedor.rfc}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+        <div class="row mt-5">
+            <div class="col">
+                <a href="#/proveedores" class="btn btn-danger text-light" (click)="onDelete(proveedor.id)">Eliminar</a>
+            </div>
+            <div class="col">
+                <a [routerLink]="['/productoedit', producto.id]" type="button"
+                    class="btn btn-primary text-light">Editar</a>
+            </div>
+        </div>
+    </div>
+</div>
