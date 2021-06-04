@@ -16,6 +16,7 @@ const app_routes: Routes = [
     { path: "productoadd", component: ProductoaddComponent},
     { path: "productoedit/:id", component: ProductoaddComponent},
     { path: "productoadd", component: ProveedoraddComponent},
+    { path: "productoadd/:id", component: ProveedoraddComponent},
     {path: "**", pathMatch: "full", redirectTo: "productos"}
 ];
 
