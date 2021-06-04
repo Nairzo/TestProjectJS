@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDataService } from './services/product-data.service';
 import { ProviderDataService } from './services/provider-data.service';
 import { ProveedoraddComponent } from './components/pages/proveedoradd/proveedoradd.component';
+import { InventarioaddComponent } from './components/pages/inventarioadd/inventarioadd.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ProveedoraddComponent } from './components/pages/proveedoradd/proveedor
     ProductoComponent,
     ProveedorComponent,
     ProductoaddComponent,
-    ProveedoraddComponent
+    ProveedoraddComponent,
+    InventarioaddComponent
   ],
   imports: [
     BrowserModule,
