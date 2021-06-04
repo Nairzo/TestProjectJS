@@ -1,0 +1,31 @@
+{
+  "name": "inventario",
+  "plural": "inventarios",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fecha": {
+      "type": "date",
+      "required": true
+    },
+    "movimiento": {
+      "type": "string",
+      "required": true
+    },
+    "cantidad": {
+      "type": "number",
+      "required": true
+    },
+    "producto": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

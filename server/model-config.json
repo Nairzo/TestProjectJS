@@ -42,5 +42,9 @@
   "proveedor": {
     "dataSource": "db",
     "public": true
+  },
+  "inventario": {
+    "dataSource": "db",
+    "public": true
   }
 }
