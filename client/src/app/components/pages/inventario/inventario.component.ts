@@ -12,7 +12,8 @@ export class InventarioComponent implements OnInit {
   constructor(private dataApi: InventoryDataService) { }
   private movimientos!: InventoryInterface;
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getListInventory();
   }
 
   getListInventory() {
