@@ -9,7 +9,7 @@ import { ProductoaddComponent } from "../app/components/pages/productoadd/produc
 const app_routes: Routes = [
     { path: "productos", component: ProductosComponent},
     { path: "proveedores", component: ProveedoresComponent},
-    { path: "proveedor", component: ProveedorComponent},
+    { path: "proveedor/:id", component: ProveedorComponent},
     { path: "inventario", component: InventarioComponent},
     { path: "producto/:id", component: ProductoComponent},
     { path: "productoadd", component: ProductoaddComponent},
