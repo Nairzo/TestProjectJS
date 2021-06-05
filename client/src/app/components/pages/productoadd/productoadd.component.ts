@@ -4,6 +4,9 @@ import { ProductInterface } from '../../../models/producto.interface';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ProviderDataService } from 'src/app/services/provider-data.service';
+import { ProviderInterface } from '../../../models/proveedor.interface';
+
 
 @Component({
   selector: 'app-productoadd',
@@ -12,18 +15,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductoaddComponent implements OnInit {
 
+  private proveedores!: ProviderInterface;
+
   public selectedProduct: ProductInterface = {
     id: "",
     nombre: "",
     descripcion: "",
     imagen: "",
     precio: 0,
-    cantidad: 0,
+    cantidad: 1,
+    proveedor: ""
   };
 
   edit: boolean = false;
 
-  constructor(private dataApi: ProductDataService, private location: Location, private activedRoute: ActivatedRoute) { }
+  constructor(private dataApi: ProductDataService, private location: Location, private activedRoute: ActivatedRoute, private proveedorApi: ProviderDataService) { }
 
   ngOnInit() {
     const params = this.activedRoute.snapshot.params;
@@ -34,15 +40,20 @@ export class ProductoaddComponent implements OnInit {
           this.edit = true;
         }, err => { console.log(err) });
     }
+    this.getListProviders();
 
   }
 
   onSaveProduct(productForm: NgForm) {
-
     this.dataApi.createProduct(productForm.value).subscribe(producto => this.location.back())
   }
+
   onUpdateProduct(productForm: NgForm) {
     this.dataApi.updateProduct(this.selectedProduct.id, this.selectedProduct).subscribe(producto => this.location.back())
+  }
+
+  getListProviders() {
+    this.proveedorApi.getAllProviders().subscribe((proveedores: ProviderInterface) => (this.proveedores = proveedores));
   }
 
 }
