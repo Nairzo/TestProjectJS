@@ -9,25 +9,27 @@
   "properties": {
     "nombre": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "descripcion": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "imagen": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "precio": {
       "type": "number",
-      "required": true,
-      "default": 0
+      "required": false
     },
     "cantidad": {
       "type": "number",
-      "required": true,
-      "default": 0
+      "required": false
+    },
+    "proveedor": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],

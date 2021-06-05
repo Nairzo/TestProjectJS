@@ -4,5 +4,6 @@ export interface ProductInterface {
     imagen?: string;
     precio?: number;
     cantidad?: number;
+    proveedor?: string;
     id?: string;
 }
