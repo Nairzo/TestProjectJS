@@ -14,7 +14,7 @@
     <tbody>
         <tr *ngFor="let movimiento of movimientos">
             <td>{{movimiento.fecha | date: 'd/M/yy'}}</td>
-            <td>{{movimiento.movimiento | uppercase}}</td>
+            <td>{{movimiento.movimiento == 1 ? "Ingreso" : "Egreso"}}</td>
             <td>{{movimiento.cantidad}}</td>
             <td>{{movimiento.producto}}</td>
         </tr>
