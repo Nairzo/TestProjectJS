@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductDataService } from '../../../services/product-data.service';
 import { ActivatedRoute, Params} from '@angular/router';
 import { ProductInterface } from '../../../models/producto.interface';
+import { ProviderDataService } from 'src/app/services/provider-data.service';
+import { ProviderInterface } from '../../../models/proveedor.interface';
 
 @Component({
   selector: 'app-producto',
@@ -10,7 +12,7 @@ import { ProductInterface } from '../../../models/producto.interface';
 })
 export class ProductoComponent implements OnInit {
   
-  constructor(route: ActivatedRoute, private dataApi: ProductDataService ) {
+  constructor(route: ActivatedRoute, private dataApi: ProductDataService, private proveedorApi: ProviderDataService ) {
     const producto_id: string = route.snapshot.params["id"];
     this.getDetails(producto_id);
    }
@@ -19,7 +21,8 @@ export class ProductoComponent implements OnInit {
     descripcion: '',
     imagen: '',
     precio: 0,
-    cantidad: 0
+    cantidad: 0,
+    proveedor: ''
   }
 
   ngOnInit() {

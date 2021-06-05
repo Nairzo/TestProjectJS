@@ -22,17 +22,13 @@
           </div>
         </div>
       </div>
-      <div class="row align-items-left">
-        <div class="col text-primary">Precio compra</div>
-        <div class="col">${{producto.precio}}.00</div>
-      </div>
-      <div class="row">
-        <div class="col text-primary">Precio venta</div>
-        <div class="col">precio</div>
-      </div>
       <div class="row">
         <div class="col text-primary">Proveedor</div>
-        <div class="col">proveedor</div>
+        <div class="col">{{producto.proveedor}}</div>
+      </div>
+      <div class="row">
+        <div class="col text-primary">Precio</div>
+        <div class="col">${{producto.precio}}.00</div>
       </div>
       <div class="row">
         <div class="col text-primary">Cantidad en inventario</div>
@@ -46,7 +42,7 @@
         <a href="#/productos" class="btn btn-danger text-light" (click)="onDelete(producto.id)">Eliminar</a>
       </div>
       <div class="col">
-        <a [routerLink] = "['/productoedit', producto.id]" type="button" class="btn btn-primary text-light">Editar</a>
+        <a [routerLink]="['/productoedit', producto.id]" type="button" class="btn btn-primary text-light">Editar</a>
       </div>
     </div>
   </div>
