@@ -41,12 +41,15 @@ export class ProductDataService {
   /*updateProduct(producto: ProductInterface){
     return this.http.put<ProductInterface>(`${this.url_api}/productos/`, producto, {headers: this.headers}).pipe(map(data => data));
   }*/
-  updateProduct(id: string|undefined, updatedGame: ProductInterface): Observable<ProductInterface>{
-    return this.http.put(`${this.url_api}/productos/`, updatedGame, {headers: this.headers}).pipe(map(data => data));
+  updateProduct(id: string|undefined, updatedProduct: ProductInterface): Observable<ProductInterface>{
+    return this.http.put(`${this.url_api}/productos/`, updatedProduct, {headers: this.headers}).pipe(map(data => data));
 
   }
   deleteProduct(id: string){
     return this.http.delete<ProductInterface>(`${this.url_api}/productos/${id}`, {headers: this.headers}).pipe(map(data => data));
+  }
+  updateCantidad(id: string, producto: ProductInterface){
+    return this.http.patch(`${this.url_api}/productos/${id}`, producto).pipe(map(data => data));
   }
 
 }
