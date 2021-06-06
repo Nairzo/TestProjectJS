@@ -22,10 +22,17 @@ export class InventarioaddComponent implements OnInit {
     producto: "",
     id: ""
   };
+  private producto: ProductInterface = {
+    nombre: '',
+    descripcion: '',
+    imagen: '',
+    precio: 0,
+    cantidad: 0,
+    proveedor: ''
+  };
   public selectedProduct: ProductInterface = {
     cantidad: 0
   };
-
   constructor(private location: Location, private productoApi: ProductDataService, private inventarioApi: InventoryDataService) { }
   private productos!: ProductInterface;
 
@@ -40,12 +47,26 @@ export class InventarioaddComponent implements OnInit {
   onSaveInventory(inventoryForm: NgForm) {
     this.inventarioApi.createInventory(inventoryForm.value).subscribe(inventario => this.location.back());
   }
-  updateCantidadProducto(id: string, cantidadForm: NgForm) {
-    this.productoApi.updateCantidad(id, cantidadForm.value).subscribe(producto => this.location.back());
+  updateCantidadProducto(id: string, selectedProduct: ProductInterface) {
+    this.productoApi.updateCantidad(id, selectedProduct).subscribe(producto => this.location.back());
   }
-  newInventory(inf: NgForm, id: string, cnt: NgForm) {
+  getCantidad(id: string) {
+    this.productoApi.getProductById(id).subscribe(producto => (this.producto = producto));
+  }
+  newInventory(inf: NgForm, id: string, cnt: number) {
+    this.selectedProduct.cantidad = this.producto.cantidad;
+    if (cnt == 1) {
+      this.selectedProduct.cantidad = ((this.selectedProduct.cantidad ?? 0) + (this.selectedInventory.cantidad ?? 0));
+    } else if(cnt == 0) {
+      this.selectedProduct.cantidad = ((this.selectedProduct.cantidad ?? 0) - (this.selectedInventory.cantidad ?? 0));
+    } else {
+      
+    }
+    this.updateCantidadProducto(id, this.selectedProduct);
     this.onSaveInventory(inf);
-    this.updateCantidadProducto(id, cnt);
+    /*console.log(inf.value);
+    console.log(this.selectedProduct.cantidad);
+    console.log(this.producto.cantidad);*/
   }
 
 }
