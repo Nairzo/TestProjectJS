@@ -4,22 +4,22 @@
 
 <div class="container cd overflow-auto">
     <h2 class="head mb-3">Movimiento</h2>
-    <form class="form-book" #formInventory="ngForm" #productInventory="ngForm"
-        (ngSubmit)=" newInventory(formInventory, selectedInventory.producto, productInventory)">
+    <form class="form-book" #formInventory="ngForm" 
+        (ngSubmit)=" newInventory(formInventory, selectedInventory.producto, selectedInventory.movimiento)">
         <div class="form-group">
             <label for="fecha">Fecha de movimiento:</label>
             <input class="form-control" type="date" id="fecha" name="fecha" [(ngModel)]="selectedInventory.fecha">
         </div>
         <div class="form-group">
             <label for="producto">Producto</label>
-            <select name="producto" id="producto" class="form-control" [(ngModel)]="selectedInventory.producto">
+            <select name="producto" id="producto" class="form-control" [(ngModel)]="selectedInventory.producto" (change)="getCantidad(selectedInventory.producto)">
                 <option *ngFor="let producto of productos" value="{{producto.id}}">{{producto.nombre}}</option>
             </select>
         </div>
         <div class="form-group">
             <label for="cantidad">Cantidad</label>
-            <input type="text" id="cantidad" name="cantidad" class="form-control"
-                [(ngModel)]="selectedInventory.cantidad" [(ngModel)]="selectedProduct.cantidad">
+            <input type="number" id="cantidad" name="cantidad" min=0 class="form-control" placeholder="Cantidad"
+                [(ngModel)]="selectedInventory.cantidad">
         </div>
         <div class="form-group">
             <label for="movimiento">Tipo</label>
