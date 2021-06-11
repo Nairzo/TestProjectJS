@@ -45,7 +45,7 @@ export class InventarioaddComponent implements OnInit {
   }
 
   onSaveInventory(inventoryForm: NgForm) {
-    this.inventarioApi.createInventory(inventoryForm.value).subscribe(inventario => this.location.back());
+    this.inventarioApi.createInventory(inventoryForm.value).subscribe(inventario => this.location.forward());
   }
   updateCantidadProducto(id: string, selectedProduct: ProductInterface) {
     this.productoApi.updateCantidad(id, selectedProduct).subscribe(producto => this.location.back());
@@ -62,8 +62,8 @@ export class InventarioaddComponent implements OnInit {
     } else {
       
     }
-    this.updateCantidadProducto(id, this.selectedProduct);
     this.onSaveInventory(inf);
+    this.updateCantidadProducto(id, this.selectedProduct);
     /*console.log(inf.value);
     console.log(this.selectedProduct.cantidad);
     console.log(this.producto.cantidad);*/
