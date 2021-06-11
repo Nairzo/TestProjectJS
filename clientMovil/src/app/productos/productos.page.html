@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>productos</ion-title>
+    <ion-icon name="add-circle" [routerLink]="['/carrito']"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let producto of productos" size="6">
+        <ion-card class="card" [routerLink]="['/productos', producto.id]">
+          <ion-img [src]=producto.imagen></ion-img>
+          <ion-card-header>
+            <ion-card-title class="f">{{producto.nombre}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{producto.cantidad == 0 ? "Agotado" : "Disponible"}} 
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
