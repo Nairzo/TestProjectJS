@@ -1,8 +1,8 @@
-import { PedidoInterface } from "./pedido.interface";
+import { CarritoInterface } from "./carrito.interface";
 
 export interface ordenInterface {
     id?: string;
-    productos?: PedidoInterface[];
+    productos?: CarritoInterface;
     total?: number;
     fecha?: Date;
 }
