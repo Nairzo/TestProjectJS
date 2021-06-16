@@ -3,15 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'productos',
-    pathMatch: 'full'
-  },
-  {
     path: 'productos',
     children: [
       {
@@ -25,13 +16,22 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'producto',
-    loadChildren: () => import('./productos/producto/producto.module').then( m => m.ProductoPageModule)
+    path: 'ordenes',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../app/ordenes/ordenes.module').then(m => m.OrdenesPageModule)
+      },
+      {
+        path: ':ordenId',
+        loadChildren: () => import('../app/ordenes/ordenes-detalles/ordenes-detalles.module').then(m => m.OrdenesDetallesPageModule)
+      }
+    ]
   },
   {
-    path: 'carrito',
-    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
-  },
+    path: '',
+    loadChildren: () => import('../app/menu/menu.module').then(m => m.MenuPageModule)
+  }
 ];
 
 @NgModule({
