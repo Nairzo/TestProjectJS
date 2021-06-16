@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ordenes</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Ordenes recientes
+    </ion-list-header>
+    <ion-item *ngFor="let orden of ordenes">
+      <ion-label>
+        <h3>Total: {{orden.total | currency: "USD"}}</h3>
+        <p>Orden hecha el: {{orden.fecha | date: "short"}}</p>
+      </ion-label>
+      <ion-icon style="color: black;" slot="end" name="arrow-forward" [routerLink]="['/ordenes', orden.id]"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
