@@ -1,0 +1,35 @@
+{
+  "name": "carrito",
+  "plural": "carritos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productoId": {
+      "type": "string",
+      "required": false
+    },
+    "productoNombre": {
+      "type": "string",
+      "required": false
+    },
+    "productoImagen": {
+      "type": "string",
+      "required": false
+    },
+    "cantidad": {
+      "type": "number",
+      "required": false
+    },
+    "precio": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
