@@ -11,15 +11,15 @@
       "type": [
         "object"
       ],
-      "required": true
+      "required": false
     },
     "total": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "fecha": {
       "type": "date",
-      "required": true
+      "required": false
     }
   },
   "validations": [],
