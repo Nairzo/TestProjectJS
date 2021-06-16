@@ -50,5 +50,9 @@
   "orden": {
     "dataSource": "db",
     "public": true
+  },
+  "carrito": {
+    "dataSource": "db",
+    "public": true
   }
 }
