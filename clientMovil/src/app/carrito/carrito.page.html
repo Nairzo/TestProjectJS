@@ -1,23 +1,56 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>carrito</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
+    <ion-row *ngFor="let cart of carrito">
+      <ion-col>
+        <ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-card-header>
+                  <ion-img [src]=cart.productoImagen></ion-img>
+
+                </ion-card-header>
+              </ion-col>
+              <ion-col>
+                <ion-row>
+                  <ion-card-title style="color: black; font-size: 20px; font-weight: bold;">{{cart.productoNombre}}</ion-card-title>
+                  <ion-card-subtitle style="color: black;">Cantidad: {{cart.cantidad}}</ion-card-subtitle>
+                  
+                </ion-row>
+                <ion-row>
+                  <ion-card-subtitle style="color: black; margin-bottom: 25px;">precio: {{cart.precio | currency: "USD"}}</ion-card-subtitle>
+                </ion-row>
+                <ion-row>
+                  <ion-card-subtitle style="color: black; margin-bottom: 25px;">total: {{cart.precio * cart.cantidad | currency: "USD"}}</ion-card-subtitle>
+                </ion-row>
+                <ion-row>
+                  <ion-button class="mar" (click)="incrementarCantidad(cart.id, cart.cantidad)">+</ion-button>
+                  <ion-button class="mar" (click)="disminuirCantidad(cart.id, cart.cantidad)">-</ion-button>
+                  <ion-button color="danger" (click)="eliminarItem(cart.id)"><ion-icon name="trash"></ion-icon></ion-button>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
     <ion-row>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          <ion-card-title>Card Title</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile,
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
-        </ion-card-content>
-      </ion-card>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="crearOrden()">Checkout</ion-button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
