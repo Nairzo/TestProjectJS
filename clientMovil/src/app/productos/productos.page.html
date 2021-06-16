@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>productos</ion-title>
-    <ion-icon name="add-circle" [routerLink]="['/carrito']"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +14,7 @@
         <ion-card class="card" [routerLink]="['/productos', producto.id]">
           <ion-img [src]=producto.imagen></ion-img>
           <ion-card-header>
-            <ion-card-title class="f">{{producto.nombre}}</ion-card-title>
+            <ion-card-title style="color: black;">{{producto.nombre}}</ion-card-title>
           </ion-card-header>
         
           <ion-card-content>
