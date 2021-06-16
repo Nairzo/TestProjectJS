@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/productos"></ion-back-button>
+      <ion-back-button defaultHref="/menu/productos"></ion-back-button>
     </ion-buttons>
     <ion-title>{{producto.nombre}}</ion-title>
   </ion-toolbar>
@@ -26,15 +26,18 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <p class="ion-text-center b">Precio <span style="color: cornflowerblue;">{{producto.precio | currency: "USD"}}</span></p>
+        <p class="ion-text-center b">Precio: <span style="color: cornflowerblue;">{{producto.precio | currency: "USD"}}</span></p>
+      </ion-col>
+      <ion-col>
+        <p class="ion-text-center b">Cantidad en stock: <span style="color: cornflowerblue;">{{producto.cantidad}}</span></p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-button >Comprar ahora</ion-button>
       </ion-col>
-      <ion-col>
-        <ion-button (click)="addToCar()">Agregar al carrito</ion-button>
+      <ion-col >
+        <ion-button  (click)="addToCar()">Agregar al carrito</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
